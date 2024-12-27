@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./utils/db.js";
 import productRoutes from "./Routes/product.route.js";
 import categoryRoutes from "./Routes/category.route.js";
+import userRoutes from "./Routes/user.route.js";
 import CORS from "cors";
 import colors from "colors";
 
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
   res.send(`<h1>Pragati ka backend hai </h1>`);
 });
 
+app.use('/api/users', userRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/product", productRoutes);
 
