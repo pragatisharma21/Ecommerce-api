@@ -8,9 +8,9 @@ const productSchema = new mongoose.Schema({
     maxlength: 20,
   },
   categoryId: {
-    type: Number,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Category",
     required: true,
-    enum: [1, 2, 3, 4, 5],
   },
   price: {
     type: Number,
